@@ -13,7 +13,7 @@ Data sources I am investigating include:
 * Human Trafficking Indicators - https://humantraffickingindicators.org/
 * U.S. State Department - https://2001-2009.state.gov/g/tip/rls/fs/07/83371.htm
 * UN Office on Drugs and Crime - http://www.unodc.org/unodc/en/human-trafficking/global-report-on-trafficking-in-persons.html
-* European Commissino - https://ec.europa.eu/anti-trafficking/eu-policy/eurostat-first-eu-statistical-data-report_en
+* European Commission - https://ec.europa.eu/anti-trafficking/eu-policy/eurostat-first-eu-statistical-data-report_en
 
 
 
