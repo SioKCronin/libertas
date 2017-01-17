@@ -10,7 +10,7 @@ Reported estimates of human trafficking range from 20-40 million people trapped 
 
 Data sources I am investigating include: 
 
-* Human Trafficking Indicators (HTI) - https://humantraffickingindicators.org/
+* Human Trafficking Indicators (HTI) - https://humantraffickingindicators.org/ 
 * U.S. State Department (USSD)- https://2001-2009.state.gov/g/tip/rls/fs/07/83371.htm
 * UN Office on Drugs and Crime (UNODC)- http://www.unodc.org/unodc/en/human-trafficking/global-report-on-trafficking-in-persons.html
 * European Commission (EC) - https://ec.europa.eu/anti-trafficking/eu-policy/eurostat-first-eu-statistical-data-report_en
