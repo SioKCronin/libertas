@@ -20,7 +20,7 @@ term "human trafficking", and to highlight the global distribution of destinatio
 
 * Begin with a blank map
 * Press play and cycle through 10 years of global human trafficking destination data
-* Interactive radial appears with brief descriptions 
+* Interactive radio button appears with brief descriptions (only pick one at a time) 
 * Select 1+ types and press go to see 10 years of that labor type 
 
 ## FEEDBACK
