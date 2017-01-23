@@ -16,6 +16,8 @@ term "human trafficking", and to highlight the global distribution of destinatio
 
 **Cycle 1**
 
+![Cycle 1 drawing](https://github.com/SioKCronin/libertas/issues/2)
+
 * Begin with a blank map
 * Press play and cycle through 10 years of global human trafficking destination data
 * Interactive radial appears with brief descriptions 
