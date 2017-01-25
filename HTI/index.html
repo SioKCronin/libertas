@@ -49,29 +49,47 @@
             })
           .entries(data);
 
-        console.log(nested);
+				var selectedType = "pdest";
 
-        var filtered = nested[0].values;
+        var year_idx = 0;
 
-        filtered = _.map(filtered, function(value) {
-          return value.country;
-        });
-        console.log(filtered);
+        var year_interval_id = setInterval(function() {
+          project_countries_for_year(year_idx);
 
-        function update_countries(d) {
-          if(filtered.indexOf(d.properties.name) !== -1) {
-            return "lightBlue";
-          } else {
-            return 'white';
-          }
-        }
+					year_idx++;
 
-        d3.select("g")
-          .selectAll('path')
-          .transition()
-          .duration(500)
-          .style('fill', update_countries)
-          .style('stroke', update_countries);
+					console.log(year_idx);
+
+          if (year_idx == nested.length) {
+						console.log("Got to the end.");
+            clearInterval(year_interval_id);
+					}
+
+				}, 1000);
+
+				function project_countries_for_year(year_idx) {
+					var filtered = _(nested[year_idx].values)
+						.filter([selectedType, true])
+					  .map(function(value) {
+							return value.country;
+						})
+						.value();
+
+					function update_country(d) {
+						if (filtered.indexOf(d.properties.name) !== -1) {
+							return "lightBlue";
+						} else {
+							return 'white';
+						}
+					}
+
+					d3.select("g")
+						.selectAll('path')
+						.transition()
+						.duration(500)
+						.style('fill', update_country)
+						.style('stroke', update_country);
+				}
       }
     </script>
   </head>
