@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    <style>
+      h1 {
+        font-size: 1.5em;
+        text-align: center;
+        font-family: Arial;
+      }
+    </style>
+    <script type="text/javascript">
+      function draw(geo_data) {
+        "use strict";
+        var margin = 5,
+            width = 1000 - margin,
+            height = 600 - margin;
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin)
+            .attr("height", height + margin)
+            .append('g')
+            .attr('class', 'map');
+
+        var projection = d3.geo.mercator()
+                               .scale((width -3) / (2 * Math.PI))
+                               .translate( [width / 2, height / 2]);
+
+        var path = d3.geo.path().projection(projection);
+
+        var map = svg.selectAll('path')
+                     .data(geo_data.features)
+                     .enter()
+                     .append('path')
+                     .attr('d', path)
+                     .style('fill', 'white')
+                     .style('stroke', 'black')
+                     .style('stroke-width', 0.5);
+
+      };
+
+      function update(data) {
+        var nested = d3.nest()
+          .key(function(d) {
+              return d['year'];
+            })
+          .entries(data);
+
+        console.log(nested);
+
+        var filtered = nested[0].values;
+
+        filtered = _.map(filtered, function(value) {
+          return value.country;
+        });
+        console.log(filtered);
+
+        function update_countries(d) {
+          if(filtered.indexOf(d.properties.name) !== -1) {
+            return "lightBlue";
+          } else {
+            return 'white';
+          }
+        }
+
+        d3.select("g")
+          .selectAll('path')
+          .transition()
+          .duration(500)
+          .style('fill', update_countries)
+          .style('stroke', update_countries);
+      }
+    </script>
+  </head>
+<body>
+  <script type="text/javascript">
+    d3.json("world_countries.json", draw);
+    d3.json("data.json", update);
+  </script>
+
+  <h1>Global map of human trafficking  destinations</h1>
+
+</body>
+</html>
