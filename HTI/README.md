@@ -32,4 +32,13 @@ term "human trafficking", and to highlight the global distribution of destinatio
 * Wanted something playing at the start (consider martini glass/narrative intro)
 * Consider a heat mapping - percentage of years assessed in which the country was cited (resulting in a 10 year cumulative picture at the end) 
 
+**Philip [Health Care Educator, 39] - Jan 26, 2017**
+* "It's hard to see the years advancing"
+* "I don't know all of these countires. Like what's that one? [points to Sudan]"
+* "Oh, I didn't see that 'Go' button down there" 
+
+**Carl [Developer, 38] - Jan 27, 2017**
+* 
+
+
 ## RESOURCES 
