@@ -23,8 +23,13 @@ term "human trafficking", and to highlight the global distribution of destinatio
 * Interactive radio button appears with brief descriptions (only pick one at a time) 
 * Select 1+ types and press go to see 10 years of that labor type 
 
-## FEEDBACK
+## FEEDBACK ROUNDS
 
-
+**Patrick [VR Engineer, 35]**
+* Liked yellow as the hotbed activity color
+* Wanted to see the year bigger to track its change 
+* Wondered if there could be more data (hover over for country data)
+* Wanted something playing at the start (consider martini glass/narrative intro)
+* Consider a heat mapping - percentage of years assessed in which the country was cited (resulting in a 10 year cumulative picture at the end) 
 
 ## RESOURCES 
