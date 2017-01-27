@@ -17,15 +17,20 @@
         color: black;
       }
 
-      #labor_type_description {
+      h3 {
+        text-align: center; 
         font-size: 0.8em;
+      }
+
+      #labor_type_description {
+        font-size: 0.9em;
         color: Black;
         font-family: Helvetica;
         text-align: center;
       }
 
       label {
-        padding: 0 5px;
+        padding: 0 8px;
       }
 
       div.radio {
@@ -35,7 +40,8 @@
       body {
         font-family: Helvetica;
         font-size: 0.90em;
-        color: Blue;
+        color: #2b8cbe;
+        background-color: #ece7f2;
       }
 
       svg {
@@ -55,6 +61,10 @@
         height: 10px;
         display: inline-block;
         font-size: 0.80em;
+      }
+
+      .nodata {
+        background-color: white;
       }
 
       .yes {
@@ -83,7 +93,7 @@
 
         var projection = d3.geo.mercator()
                                .scale((width -3) / (2 * Math.PI))
-                               .translate( [width / 2, height / 2]);
+                               .translate( [width / 2, height / 1.5]);
 
         var path = d3.geo.path().projection(projection);
 
@@ -207,10 +217,11 @@
     d3.json("world_countries.json", draw);
   </script>
   <h2>Human Trafficking Destinations  </h2>
+  <h3> Source: <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators</a></h3> 
   <div class="legend">
-    <span class="nodata"></span> No Data<br />
-    <span class="yes"></span> Mentioned in report<br />
-    <span class="no"></span> Not mentioned
+    <span class="yes"></span> Cited as destination in USSD Trafficking in Persons data<br />
+    <span class="no"></span> Not cited<br />
+    <span class="nodata"></span> No data
   </div>
  </body>
 </html>
