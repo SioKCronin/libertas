@@ -23,7 +23,7 @@ term "human trafficking", and to highlight the global distribution of destinatio
 * Interactive radio button appears with brief descriptions (only pick one at a time) 
 * Select 1+ types and press go to see 10 years of that labor type 
 
-## FEEDBACK ROUNDS
+## FEEDBACK
 
 **Patrick [VR Engineer, 35] - Jan 26, 2017**
 * Liked yellow as the hotbed activity color
