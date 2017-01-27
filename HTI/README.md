@@ -14,7 +14,7 @@ structure of the US State Department’s Trafficking in Persons (TIP) reports.
 The objective of this D3 visualization is to introduce people to the types of labor defined under the umbrella
 term "human trafficking", and to highlight the global distribution of destinations of such exploitation. 
 
-**Cycle 1**
+**First**
 
 ![Cycle 1 drawing](https://cloud.githubusercontent.com/assets/19956669/22218413/70ea58cc-e15b-11e6-9dfd-aafe64a85b4d.JPG)
 
@@ -25,7 +25,7 @@ term "human trafficking", and to highlight the global distribution of destinatio
 
 ## FEEDBACK ROUNDS
 
-**Patrick [VR Engineer, 35]**
+**Patrick [VR Engineer, 35] - Jan 26, 2017**
 * Liked yellow as the hotbed activity color
 * Wanted to see the year bigger to track its change 
 * Wondered if there could be more data (hover over for country data)
