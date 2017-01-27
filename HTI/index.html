@@ -8,10 +8,66 @@
       h1 {
         font-size: 1.5em;
         text-align: center;
-        font-family: Arial;
+        font-family: Helvetica;
+        color: DarkBlue;
       }
+
+      h2 {
+        text-align: center;
+        color: black;
+      }
+
+      #labor_type_description {
+        font-size: 0.8em;
+        color: Black;
+        font-family: Helvetica;
+        text-align: center;
+      }
+
+      label {
+        padding: 0 5px;
+      }
+
+      div.radio {
+        text-align: center;
+      }
+
+      body {
+        font-family: Helvetica;
+        font-size: 0.90em;
+        color: Blue;
+      }
+
+      svg {
+        display: block;
+      }
+
+      div.legend {
+        position: fixed;
+        top: 5px;
+        left: 50px;
+        color: #333;
+      }
+
+      div.legend span {
+        border: 1px solid #333;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        font-size: 0.80em;
+      }
+
+      .yes {
+        background-color: yellow;
+      }
+
+      .no {
+        background-color: lightBlue;
+      }
+
     </style>
     <script type="text/javascript">
+
       function draw(geo_data) {
         "use strict";
         var margin = 5,
@@ -40,6 +96,8 @@
                      .style('stroke', 'black')
                      .style('stroke-width', 0.5);
 
+        d3.json("data.json", update);
+
       };
 
       function update(data) {
@@ -49,57 +107,110 @@
             })
           .entries(data);
 
-				var selectedType = "pdest";
+        d3.select('svg').datum(nested);
 
-        var year_idx = 0;
+        d3.json("labor_types.json", buildControls);
+      }
 
-        var year_interval_id = setInterval(function() {
-          project_countries_for_year(year_idx);
+      function projectByType(laborType) {
+        var data = d3.select('svg').datum();
 
-					year_idx++;
+        var yearIdx = 0;
 
-					console.log(year_idx);
+        var yearIntervalId = setInterval(function() {
+          projectCountriesForYear(yearIdx);
 
-          if (year_idx == nested.length) {
-						console.log("Got to the end.");
-            clearInterval(year_interval_id);
-					}
+					yearIdx++;
 
+					console.log(yearIdx);
+
+          if (yearIdx == data.length) {
+            clearInterval(yearIntervalId);
+          }
 				}, 1000);
 
-				function project_countries_for_year(year_idx) {
-					var filtered = _(nested[year_idx].values)
-						.filter([selectedType, true])
+				function projectCountriesForYear(yearIdx) {
+					var filtered_true = _(data[yearIdx].values)
+						.filter([laborType, true])
 					  .map(function(value) {
 							return value.country;
 						})
 						.value();
 
-					function update_country(d) {
-						if (filtered.indexOf(d.properties.name) !== -1) {
-							return "lightBlue";
-						} else {
-							return 'white';
-						}
-					}
+          var filtered_false = _(data[yearIdx].values)
+            .filter([laborType, false])
+            .map(function(value) {
+              return value.country;
+            })
+            .value();
+
+          d3.select("h2")
+            .text("Human Trafficking Destinations " + data[yearIdx].key);
+
+					function updateCountry(d) {
+						if (filtered_true.indexOf(d.properties.name) !== -1) {
+							return "yellow";
+						} else if (filtered_false.indexOf(d.properties.name) !== -1) {
+              return "lightBlue";
+            } else {
+              return "white";
+            }
+          }
 
 					d3.select("g")
 						.selectAll('path')
 						.transition()
 						.duration(500)
-						.style('fill', update_country)
-						.style('stroke', update_country);
+						.style('fill', updateCountry)
 				}
+
       }
+
+			function buildControls(controls) {
+        d3.select('body')
+          .append('div')
+          .attr('class','radio')
+          .selectAll('label')
+          .data(controls)
+          .enter()
+          .append('label')
+            .attr('for', function(d) { return d.key; })
+            .text(function(d) { return d.name; })
+          .append('input')
+            .attr('type', 'radio')
+						.attr('name', 'labor-type')
+            .attr('id', function(d) { return d.key; })
+            .on('click', showDescription);
+
+				d3.select('div.radio').append('button')
+					.attr('name', 'select_type')
+					.html('Go')
+          .on('click', go);
+
+        d3.select('body').append('div')
+          .attr('id', 'labor_type_description');
+
+        function go(d, i) {
+          var laborType = d3.select('input[name="labor-type"]:checked').data()[0].key;
+          projectByType(laborType);
+        }
+
+        function showDescription(d, i) {
+          d3.select('div#labor_type_description')
+            .html(d.description);
+         }
+      }
     </script>
   </head>
 <body>
   <script type="text/javascript">
     d3.json("world_countries.json", draw);
-    d3.json("data.json", update);
   </script>
-
-  <h1>Global map of human trafficking  destinations</h1>
-
-</body>
+  <h2>Human Trafficking Destinations  </h2>
+  <div class="legend">
+    <span class="nodata"></span> No Data<br />
+    <span class="yes"></span> Mentioned in report<br />
+    <span class="no"></span> Not mentioned
+  </div>
+ </body>
 </html>
