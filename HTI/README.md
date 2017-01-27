@@ -29,6 +29,8 @@ term "human trafficking", and to highlight the global distribution of destinatio
 
 ## FEEDBACK
 
+Between the first and second iterations I conducted the following three user interviews: 
+
 **Patrick [VR Engineer, 35] - Jan 26, 2017**
 * Liked yellow as the hotbed activity color
 * Wanted to see the year bigger to track its change 
