@@ -2,6 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
     <style>
@@ -17,29 +20,23 @@
         color: black;
       }
 
+      h2 span {
+        color: #3182bd;
+      }
+
       h3 {
         text-align: center; 
         font-size: 0.8em;
       }
 
       #labor_type_description {
-        font-size: 0.9em;
         color: Black;
         font-family: Helvetica;
         text-align: center;
       }
 
-      label {
-        padding: 0 8px;
-      }
-
-      div.radio {
-        text-align: center;
-      }
-
       body {
         font-family: Helvetica;
-        font-size: 0.90em;
         color: #2b8cbe;
         background-color: #ece7f2;
       }
@@ -49,10 +46,9 @@
       }
 
       div.legend {
-        position: fixed;
-        top: 5px;
-        left: 50px;
         color: #333;
+        width: 600px;
+        margin: auto;
       }
 
       div.legend span {
@@ -60,6 +56,7 @@
         width: 10px;
         height: 10px;
         display: inline-block;
+        margin-left: 20px;
         font-size: 0.80em;
       }
 
@@ -75,6 +72,10 @@
         background-color: lightBlue;
       }
 
+      .btn {
+        margin: 20px; 
+      }
+
     </style>
     <script type="text/javascript">
 
@@ -84,7 +85,7 @@
             width = 1000 - margin,
             height = 600 - margin;
 
-        var svg = d3.select("body")
+        var svg = d3.select(".main")
             .append("svg")
             .attr("width", width + margin)
             .attr("height", height + margin)
@@ -154,8 +155,8 @@
             })
             .value();
 
-          d3.select("h2")
-            .text("Human Trafficking Destinations " + data[yearIdx].key);
+          d3.select("h2 span")
+            .text(data[yearIdx].key);
 
 					function updateCountry(d) {
 						if (filtered_true.indexOf(d.properties.name) !== -1) {
@@ -176,28 +177,32 @@
 
       }
 
-			function buildControls(controls) {
-        d3.select('body')
+			function buildControls(laborTypes) {
+        var labels = d3.select('.sidebar')
           .append('div')
-          .attr('class','radio')
+          .attr('class','labor-types')
           .selectAll('label')
-          .data(controls)
+          .data(laborTypes)
           .enter()
           .append('label')
-            .attr('for', function(d) { return d.key; })
-            .text(function(d) { return d.name; })
-          .append('input')
-            .attr('type', 'radio')
-						.attr('name', 'labor-type')
-            .attr('id', function(d) { return d.key; })
-            .on('click', showDescription);
+            .attr('class', 'radio-inline');
 
-				d3.select('div.radio').append('button')
+        labels.append('input')
+          .attr('type', 'radio')
+          .attr('name', 'labor-type')
+          .attr('id', function(d) { return d.key; })
+          .on('click', showDescription);
+
+        labels.append('span')
+          .text(function(d) { return d.name; });
+
+				d3.select('div.labor-types').append('button')
 					.attr('name', 'select_type')
-					.html('Go')
+          .attr('class', 'btn btn-success')
+					.html('Play')
           .on('click', go);
 
-        d3.select('body').append('div')
+        d3.select('.sidebar').append('div')
           .attr('id', 'labor_type_description');
 
         function go(d, i) {
@@ -216,12 +221,23 @@
   <script type="text/javascript">
     d3.json("world_countries.json", draw);
   </script>
-  <h2>Human Trafficking Destinations  </h2>
-  <h3> Source: <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators</a></h3> 
-  <div class="legend">
-    <span class="yes"></span> Cited as destination in USSD Trafficking in Persons data<br />
-    <span class="no"></span> Not cited<br />
-    <span class="nodata"></span> No data
+  <div class="container">
+      <div class="title">
+        <h2>Human Trafficking Destinations <span></span></h2>
+      </div>
+      <div class="sidebar">
+        <div class="legend">
+          <span class="nodata"></span> No data
+          <span class="no"></span> Not cited
+          <span class="yes"></span> Cited as destination
+        </div>
+      </div>
+      <div class="main">
+      </div>
+      <div>
+        <h3>Source: <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators</a></h3> 
+      </div>
+    </div>
   </div>
  </body>
 </html>
