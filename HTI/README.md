@@ -14,17 +14,38 @@ structure of the US State Department’s Trafficking in Persons (TIP) reports.
 The objective of this D3 visualization is to introduce people to the types of labor defined under the umbrella
 term "human trafficking", and to highlight the global distribution of destinations of such exploitation. 
 
-**Cycle 1**
+**First iteration (index.html)**
 
-![Cycle 1 drawing](https://cloud.githubusercontent.com/assets/19956669/22218413/70ea58cc-e15b-11e6-9dfd-aafe64a85b4d.JPG)
+* Begin with a blank map, title, legend, labor types and go button. 
+* Select a labor type, press 'Go' and cycle through 10 years of global human trafficking destination data
+* Interactive radio button includes brief descriptions that display when type is selected 
 
-* Begin with a blank map
-* Press play and cycle through 10 years of global human trafficking destination data
-* Interactive radio button appears with brief descriptions (only pick one at a time) 
-* Select 1+ types and press go to see 10 years of that labor type 
+**Second iteration (index2.html)**
+
+* Make years more visible
+* Make 'Go' button more visible
+* Perform additional data cleaning on nation geometry data (ensure "no data" really means "no data", not just different name) 
+* Include introductory narrative the covers topic, data source, and different labor types 
 
 ## FEEDBACK
 
+Between the first and second iterations I conducted the following three user interviews: 
 
+**Patrick [VR Engineer, 35] - Jan 26, 2017**
+* Liked yellow as the hotbed activity color
+* Wanted to see the year bigger to track its change 
+* Wondered if there could be more data (hover over for country data)
+* Wanted something playing at the start (consider martini glass/narrative intro)
+* Consider a heat mapping - percentage of years assessed in which the country was cited (resulting in a 10 year cumulative picture at the end) 
+
+**Philip [Health Care Educator, 39] - Jan 26, 2017**
+* "It's hard to see the years advancing."
+* "I don't know all of these countires. Like what's that one? [points to Sudan]"
+* "Oh, I didn't see that 'Go' button down there." 
+
+**Carl [Developer, 38] - Jan 27, 2017**
+* "I want to feel like I get a sense of intensity of activity over time."
+* "What countries am I looking at here? Like where's Syria in all of this?"
+* I like that I can choose the labor type. 
 
 ## RESOURCES 
