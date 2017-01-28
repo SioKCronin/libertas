@@ -50,7 +50,7 @@ Between the first and second iterations I conducted the following three user int
 
 ## RESOURCES 
 
-Human Trafficking Indicators: https://humantraffickingindicators.org/
-US State Department: https://www.state.gov/j/tip/rls/tiprpt/
-Boostrap: http://getbootstrap.com/css/
-ColorBrewer: http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3
+* Human Trafficking Indicators: https://humantraffickingindicators.org/
+* US State Department: https://www.state.gov/j/tip/rls/tiprpt/
+* Boostrap: http://getbootstrap.com/css/
+* ColorBrewer: http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3
