@@ -39,12 +39,13 @@ Between the first and second iterations I conducted the following three user int
 * Consider a heat mapping - percentage of years assessed in which the country was cited (resulting in a 10 year cumulative picture at the end) 
 
 **Philip [Health Care Educator, 39] - Jan 26, 2017**
-* "It's hard to see the years advancing"
+* "It's hard to see the years advancing."
 * "I don't know all of these countires. Like what's that one? [points to Sudan]"
-* "Oh, I didn't see that 'Go' button down there" 
+* "Oh, I didn't see that 'Go' button down there." 
 
 **Carl [Developer, 38] - Jan 27, 2017**
-* 
-
+* "I want to feel like I get a sense of intensity of activity over time."
+* "What countries am I looking at here? Like where's Syria in all of this?"
+* I like that I can choose the labor type. 
 
 ## RESOURCES 
