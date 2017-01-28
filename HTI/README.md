@@ -52,5 +52,7 @@ Between the first and second iterations I conducted the following three user int
 
 * Human Trafficking Indicators: https://humantraffickingindicators.org/
 * US State Department: https://www.state.gov/j/tip/rls/tiprpt/
+* International Labour Organization: http://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_181961/lang--en/index.htm
 * Boostrap: http://getbootstrap.com/css/
 * ColorBrewer: http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3
+
