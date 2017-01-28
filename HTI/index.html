@@ -30,9 +30,11 @@
       }
 
       #labor_type_description {
+        height: 30px;
         color: Black;
         font-family: Helvetica;
         text-align: center;
+        padding-bottom: 10px;
       }
 
       body {
@@ -73,7 +75,16 @@
       }
 
       .btn {
-        margin: 20px; 
+        margin-left: 20px;
+      }
+
+      div.labor-types {
+        margin: 10px auto;
+        width: 90%;
+      }
+
+      div.labor-types span {
+        margin-right: 20px;
       }
 
     </style>
@@ -202,9 +213,6 @@
 					.html('Play')
           .on('click', go);
 
-        d3.select('.sidebar').append('div')
-          .attr('id', 'labor_type_description');
-
         function go(d, i) {
           var laborType = d3.select('input[name="labor-type"]:checked').data()[0].key;
           projectByType(laborType);
@@ -233,6 +241,7 @@
         </div>
       </div>
       <div class="main">
+        <div id="labor_type_description"></div>
       </div>
       <div>
         <h3>Source: <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators</a></h3> 
