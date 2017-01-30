@@ -14,13 +14,16 @@ structure of the US State Department’s Trafficking in Persons (TIP) reports.
 The objective of this D3 visualization is to introduce people to the types of labor defined under the umbrella
 term "human trafficking", and to highlight the global distribution of destinations of such exploitation. 
 
-**First iteration (index.html)**
+**FIRST iteration (index.html)**
 
+![Design #1] (https://cloud.githubusercontent.com/assets/19956669/22394041/e3383036-e4c9-11e6-9f80-ca1bf8946347.png)
 * Begin with a blank map, title, legend, labor types and go button. 
 * Select a labor type, press 'Go' and cycle through 10 years of global human trafficking destination data
 * Interactive radio button includes brief descriptions that display when type is selected 
 
-**Second iteration (index2.html)**
+**SECOND iteration (index2.html)**
+
+![Design #2](https://cloud.githubusercontent.com/assets/19956669/22443396/996f6d62-e6f3-11e6-9569-8c617f51329d.png)
 
 * Make years more visible
 * Make 'Go' button more visible
