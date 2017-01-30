@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+
     <style>
       h1 {
         font-size: 1.5em;
@@ -20,20 +22,25 @@
         color: black;
       }
 
-      h2 span {
-        color: #3182bd;
+      p {
+        color: black;
       }
 
       h3 {
-        text-align: center; 
-        font-size: 0.8em;
+        text-align: center;
+        font-size: 0.9em;
       }
+
+      .labor-types {
+        font-size: 17px;
+      }
+
 
       #labor_type_description {
         height: 30px;
         color: Black;
-        font-family: Helvetica;
         text-align: center;
+        font-family: Helvetica;
         padding-bottom: 10px;
       }
 
@@ -47,10 +54,14 @@
         display: block;
       }
 
+      .main {
+        position: relative;
+      }
+
       div.legend {
         color: #333;
-        width: 600px;
-        margin: auto;
+        position:absolute;
+        bottom: 150px;
       }
 
       div.legend span {
@@ -60,6 +71,14 @@
         display: inline-block;
         margin-left: 20px;
         font-size: 0.80em;
+      }
+
+      .year {
+        font-size: 100px;
+        color: #bdd7e7;
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
       }
 
       .nodata {
@@ -78,11 +97,6 @@
         margin-left: 20px;
       }
 
-      div.labor-types {
-        margin: 10px auto;
-        width: 90%;
-      }
-
       div.labor-types span {
         margin-right: 20px;
       }
@@ -93,7 +107,7 @@
       function draw(geo_data) {
         "use strict";
         var margin = 5,
-            width = 1000 - margin,
+            width = 1140 - margin,
             height = 600 - margin;
 
         var svg = d3.select(".main")
@@ -134,7 +148,7 @@
         d3.json("labor_types.json", buildControls);
       }
 
-      function projectByType(laborType) {
+      function projectByType(laborType, finish) {
         var data = d3.select('svg').datum();
 
         var yearIdx = 0;
@@ -148,6 +162,7 @@
 
           if (yearIdx == data.length) {
             clearInterval(yearIntervalId);
+            finish();
           }
 				}, 1000);
 
@@ -166,14 +181,17 @@
             })
             .value();
 
-          d3.select("h2 span")
+          d3.select(".year")
             .text(data[yearIdx].key);
 
 					function updateCountry(d) {
+            // If TRUE, fill country yellow
 						if (filtered_true.indexOf(d.properties.name) !== -1) {
 							return "yellow";
+            // If FALSE, fill country light blue
 						} else if (filtered_false.indexOf(d.properties.name) !== -1) {
               return "lightBlue";
+            // If no data, fill country white 
             } else {
               return "white";
             }
@@ -214,14 +232,23 @@
           .on('click', go);
 
         function go(d, i) {
+          var that = this;
+
+          function finish() {
+            $(that).prop("disabled", false)
+          }
+
+          $(this).prop("disabled", true)
+
           var laborType = d3.select('input[name="labor-type"]:checked').data()[0].key;
-          projectByType(laborType);
+
+          projectByType(laborType, finish);
         }
 
         function showDescription(d, i) {
           d3.select('div#labor_type_description')
             .html(d.description);
-         }
+        }
       }
     </script>
   </head>
@@ -231,17 +258,25 @@
   </script>
   <div class="container">
       <div class="title">
-        <h2>Human Trafficking Destinations <span></span></h2>
+        <h2>Human Trafficking Destinations</h2>
+        <p>In 2001, the US State Department published its first Trafficking in Persons (TIP) report; a diplomatic tool tracking governmental anti-human
+        trafficking efforts.</p>
+        <p>Richard W. Frank of the Australian National University has compiled and coded TIP report
+        data from 2001 to 2001, and maintains the data as an open resource titled Human Trafficking Indicators (HTI).
+        The HTI includes data from 2001 to 2001 for 179 countries, assessing each country’s role as a source, transit
+        location, or destination for human trafficking.</p>
+        <p>The countires participating in human trafficking vary depending on the category of exploitation, which can be observed by selecting one of the following seven forced labor types:</p>
       </div>
       <div class="sidebar">
-        <div class="legend">
-          <span class="nodata"></span> No data
-          <span class="no"></span> Not cited
-          <span class="yes"></span> Cited as destination
-        </div>
       </div>
       <div class="main">
         <div id="labor_type_description"></div>
+        <div class="legend">
+          <span class="nodata"></span> No data<br />
+          <span class="no"></span> Not cited<br />
+          <span class="yes"></span> Cited as destination
+        </div>
+        <div class="year"></div>
       </div>
       <div>
         <h3>Source: <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators</a></h3> 
