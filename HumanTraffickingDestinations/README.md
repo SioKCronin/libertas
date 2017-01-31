@@ -60,12 +60,12 @@ Key features:
 
 ![Design #2](https://cloud.githubusercontent.com/assets/19956669/22443396/996f6d62-e6f3-11e6-9569-8c617f51329d.png)
 
-Key feature changes: 
+Key changes: 
 
 * Make years more visible
-* Make 'Go' button more visible
-* Perform additional data cleaning on nation geometry data (ensure "no data" really means "no data", not just different name) 
+* Make *Play* button more visible 
 * Include introductory narrative the covers topic, data source, and different labor types 
+* Resize map and relocate years and legend 
 
 ## FEEDBACK
 
