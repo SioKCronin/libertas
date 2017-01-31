@@ -13,14 +13,14 @@ structure of the US State Department’s Trafficking in Persons (TIP) reports.*
 
 ## CONTENTS
 
-* **README.md**: 
-* **HTI.csv**: 
-* **data.json**:
-* **index1.html**:
-* **index2.html**:
-* **world_countries.json**:
-* **labor_types.json**:
-* **Cleaning.ipynb**:
+* **README.md**: This document
+* **HTI.csv**: Original data downloaded from Human Trafficking Indicators  
+* **data.json**: Json output of Cleaning.ipynb
+* **index1.html**: First design iteration
+* **index2.html**: Second design iteration
+* **world_countries.json**: Country geometries used from a World Cup example from my Udacity coursework 
+* **labor_types.json**: Labor types with brief descriptions 
+* **Cleaning.ipynb**: Reconcile world_countries.json with HTI.csv
 
 For country geometry, I have used a datafile used in a World Cup example from my coursework at Udacity. This required some hand-corrections for countries whose names differed from my HTI data. These changes are documented in Cleaning.ipynb
 
