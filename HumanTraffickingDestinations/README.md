@@ -11,6 +11,12 @@ further trafficking. It also codes whether states are primarily source, transit,
 as if there is internal trafficking. The data are ordered by trafficking type and then according to the rough 
 structure of the US State Department’s Trafficking in Persons (TIP) reports.*
 
+## DATA
+
+To prepare the dataset I
+
+For country geometry, I have used a datafile used in a World Cup example from my coursework at Udacity. This required some hand-corrections for countries whose names differed from my HTI data. These changes are documented in Cleaning.ipynb
+
 ## DESIGN 
 
 ### Objective 
