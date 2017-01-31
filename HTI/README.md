@@ -2,7 +2,7 @@
 
 *Human Trafficking Destinations* presents data on countries cited as destinations of seven types of human trafficking labor between the years of 2001 and 2011. The data of this interactive visualization comes from the Human Trafficking Indicators, an open data project launched and maintained by Australian National University researcher Richard W. Frank. 
 
-\u About the Human Trafficking Indicators (HTI) dataset (from the *HTI Codebook*) \u
+_ About the Human Trafficking Indicators (HTI) dataset (from the *HTI Codebook*) _
 
 "The Human Trafficking Indicators database (HTI) codes information about human trafficking flows between 179 
 countries and within them from 2000 to 2011.1 These data capture the various types of human trafficking found 
