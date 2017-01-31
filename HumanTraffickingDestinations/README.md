@@ -16,6 +16,7 @@ From the Human Trafficking Indicators (HTI) *Codebook*:
 * **world_countries.json**: Country geometries used from a World Cup example from my Udacity coursework 
 * **labor_types.json**: Labor types with brief descriptions 
 * **Cleaning.ipynb**: Reconcile world_countries.json with HTI.csv
+* **HTI Codebook 20013.pdf**: HTI data resource
 * **Additional_Reading** PDFs with more context on Human Trafficking
 
 For country geometry, I have used a datafile used in a World Cup example from my coursework at Udacity. This required some hand-corrections for countries whose names differed from my HTI data. These changes are documented in Cleaning.ipynb
