@@ -35,19 +35,19 @@ I chose, instead, to focus on the differences between specific labor types track
 
 I chose mercator, as relative geographic scale was not not necessary for my narrative, and I found the verticality of the flattening of the globe made the countries and continents more immediately legible than other projections such as *Natural Earth* or *ven der Grinten*. 
 
-**Interactive**
+**Interaction**
 
-
-
+To emphasize the individuality of the longitudinal devleopments of each labor type, I chose to offer the viewer a radio dial where they could select one labor type a time. After some user testing, I chose to disable the *Play* button during each animation to prevent the visualization from attempting to present two sequences at once.   
 
 
 **FIRST iteration (index1.html)**
 
 ![Design #1] (https://cloud.githubusercontent.com/assets/19956669/22394041/e3383036-e4c9-11e6-9f80-ca1bf8946347.png)
 
-* Begin with a blank map, title, legend, labor types and go button. 
-* Select a labor type, press 'Go' and cycle through 10 years of global human trafficking destination data
-* Interactive radio button includes brief descriptions that display when type is selected 
+* Begin with a blank map, title, legend, labor types and a *Play* button. 
+* Select a labor type from a radio dial 
+* Labor type selction reveals a brief description 
+* Press *Play* to cycle through 11 years of global human trafficking destination data
 
 **SECOND iteration (index2.html)**
 
