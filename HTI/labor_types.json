@@ -1,8 +1,0 @@
-[
-{"key": "pdest", "name": "Prostitution", "description": "Destination for forced prostitution, commercial sexual exploitation, or sexual exploitation of children"},
-{"key": "ldest", "name": "Labor", "description": "Destination for forced labor including agricultural, construction, sweatshops, domestic servitude, bonded labor, begging, and forced child labor."},
-{"key": "ddest", "name": "Debt Bondage", "description": "Destination for any type of debt bondage, including children paying off adults’ debt or migrants paying off broker fees for relocation and employment."},
-{"key": "dsdest", "name": "Domestic Servitude", "description": "Destination for domestic servitude, including forced domestic labor or forced child domestic labor."},
-{"key": "cpdest", "name": "Child Prostitution", "description": "Destination for victims for the purposes of forced child prostitution, sexual exploitation of children, or child sex tourism."},
-{"key": "cldest", "name": "Child Labor", "description": "Destination for forced child labor including sweatshops, involuntary servitude, domestic servitude, forced begging, or camel jockeys."},
-{"key": "csdest", "name": "Child Soldiers", "description": "Destination for children trafficked abroad to fight in civil conflicts or other wars."}]
