@@ -15,7 +15,7 @@ structure of the US State Department’s Trafficking in Persons (TIP) reports.*
 
 * **README.md**: This document
 * **HTI.csv**: Original data downloaded from Human Trafficking Indicators  
-* **data.json**: Json output of Cleaning.ipynb
+* **data.json**: json output of Cleaning.ipynb
 * **index1.html**: First design iteration
 * **index2.html**: Second design iteration
 * **world_countries.json**: Country geometries used from a World Cup example from my Udacity coursework 
