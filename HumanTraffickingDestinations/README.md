@@ -1,6 +1,6 @@
 ## SUMMARY
 
-*Human Trafficking Destinations* presents data on countries cited as destinations of seven types of human trafficking labor between the years of 2001 and 2011. The data of this interactive visualization comes from the Human Trafficking Indicators, an open data project launched and maintained by Australian National University researcher Richard W. Frank. 
+*Human Trafficking Destinations* presents data on countries cited as human trafficking destinations for seven types of human trafficking labor types for years between 2001 and 2011. The data comes from the Human Trafficking Indicators (HTI), an open data project launched and maintained by Australian National University researcher Richard W. Frank. 
 
 From the Human Trafficking Indicators (HTI) *Codebook*:
 
@@ -15,34 +15,33 @@ structure of the US State Department’s Trafficking in Persons (TIP) reports.*
 
 ### Objective 
 
-For many, the term "human trafficking" connotes specific forms of forced labor, often sexual exploitation. Anti-human trafficking agencies, including the US State Department and United Nations Office on Drugs and Crime, maintain a broader defintion of forced labor, and this visualization seeks to illustrate how segmenting the verticals of the global black market reveals different traffic flows. 
-
-The objective of this D3 visualization is to provide viewers with the opportunity to compare global patterns of human trafficking by mapping country destinations for the seven forced labor types tracked by the Trafficking in Persons (TIP) report published by the US State Department. 
+For many, the term "human trafficking" connotes specific forms of forced labor. Anti-human trafficking agencies, including the US State Department and United Nations Office on Drugs and Crime, maintain a rather broader defintion of forced labor. This visualization seeks to illustrate how segmenting the verticals of the global black market reveals different traffic flows, which can ultimately help support national and global efforts to liberate people from exploitation. This visualiation provide viewers with the opportunity to compare global patterns of human trafficking for the seven forced labor categories tracked by the Trafficking in Persons (TIP) report published by the US State Department. 
 
 ### Design  
 
 **Global trends over time**
 
-The main impressions I am aiming for in this visualization is the tracking of regional and global spread for the selected forced labor type. This can be seen most notably when comparing *Prostituion* (global spread that increases over the 11 year period) with *Child Soldiers* (restricted regional growth over time). A bold yellow hue was selected to aid in this global tracking, yet national borders were clealry maintained, as the data is collected based on specific national anti-human trafficking tracking assessments. 
+The main impression I am aiming for in this visualization is the global spread of human trafficking by each of the highlighted forced labor categories. Variations in regional and global spread can be observed when comparing labor types. This can be seen most notably when comparing *Prostituion* (global spread that increases over the 11 year period) with *Child Soldiers* (restricted regional growth over time). To help the viewer keep track of the global spread, I selected a bold yellow hue for the citation data. I also kept national borders clearly maintained, as I wanted to provide viewers with the opportunity to monitor specific countries in their exploration. 
 
 **Data types**
 
-The Human Trafficking Indicators do not include population estimates or data on specific flow trajectories. It is for this reason why I chose not to higlight the data source's *Destination* data, and not its data on *Source* and *Transit*, as I found in my sketches that these comparisons encouraged a linearity in thinking of specific traffickig flow routes, which my research did not support. For instance, just because Mexico is listed as a *Source*, and the United States as a *Transit*, does not mean a trafficked person in the *Destination* of Canada came from that route. In fact, in-country forced labor (with no smuggling of persons) is a major issue for many countries, and storytelling on movement of persons can mask the impact of this problem. 
+The Human Trafficking Indicators do not include population estimates or data on specific flow trajectories. I chose to higlight *Destination* data by itself, and not *Source* and *Transit*, as I believe the data source does not provide enough dimensionality to tell clear stories connection *Source*, *Transit*, and *Destination*. For instance, in 2011, Canada, Mexico, and the United States are each cited as *Source*, *Transit* country, and *Destination* for *Prostitution*. The data does not provide information as to how trafficking flows manifest between these countries, so presenting *Source*, *Transit*, and *Destination* is ambiguous. It would be difficult to ensure viewers are drawing conclusions that are consistent with the dynamics of the trafficking observed. Furthermore, in-country forced labor (with no smuggling of persons) is a major issue for many countries, and storytelling on movement of persons can mask the impact of this very serious problem. 
 
-I chose, instead, to focus on the differences between specific labor types tracked in the HTI, which come directly from the data classifications outlined by the US State Department in the TIP reports. For each year, each country can receive only one of three values - a citation, no citation, or no data. These are each clearly displayed, 
+I chose, instead, to focus on the differences between global patterns of specific labor types, with data presenting the nations where people are actually held in the bondage (*Destination*). For each year, each country can receive only one of three values - a citation, no citation, or no data. I selected a bold yellow color for the citation, and contrasted this with a light blue color for the countries not given a citation. I indicated the countries with no data for the indexed year with a white fill.  
 
 **Geo Projection** 
 
-I chose mercator, as relative geographic scale was not not necessary for my narrative, and I found the verticality of the flattening of the globe made the countries and continents more immediately legible than other projections such as *Natural Earth* or *ven der Grinten*. 
+For my map projection, I chose mercator. Relative geographic scale is not necessary in the narrative I've chosen, and I find the verticality of land mass in mercator projections aid in readily identifying countries and continents, as compared to more 3D-evoking projections such as *Natural Earth* or *ven der Grinten*. 
 
 **Interaction**
 
-To emphasize the individuality of the longitudinal devleopments of each labor type, I chose to offer the viewer a radio dial where they could select one labor type a time. After some user testing, I chose to disable the *Play* button during each animation to prevent the visualization from attempting to present two sequences at once.   
+To emphasize the individuality of the longitudinal devleopments of each labor type, I provide the viewer with a radio dial where they could select one labor type a time. After some testing, I chose to disable the *Play* button during each animation to prevent the visualization from attempting to present two sequences at once, as this does not render successfully in the visualization as I have designed it.   
 
 
 **FIRST iteration (index1.html)**
 
 ![Design #1] (https://cloud.githubusercontent.com/assets/19956669/22394041/e3383036-e4c9-11e6-9f80-ca1bf8946347.png)
+Key features:
 
 * Begin with a blank map, title, legend, labor types and a *Play* button. 
 * Select a labor type from a radio dial 
@@ -53,6 +52,8 @@ To emphasize the individuality of the longitudinal devleopments of each labor ty
 
 ![Design #2](https://cloud.githubusercontent.com/assets/19956669/22443396/996f6d62-e6f3-11e6-9569-8c617f51329d.png)
 
+Key feature changes: 
+
 * Make years more visible
 * Make 'Go' button more visible
 * Perform additional data cleaning on nation geometry data (ensure "no data" really means "no data", not just different name) 
@@ -60,7 +61,7 @@ To emphasize the individuality of the longitudinal devleopments of each labor ty
 
 ## FEEDBACK
 
-Between the first and second iterations I conducted the following three user interviews: 
+Between the first and second iterations I conducted three user interviews, which yielded the following recommendations: 
 
 **Patrick [VR Engineer, 35] - Jan 26, 2017**
 * Liked yellow as the hotbed activity color
