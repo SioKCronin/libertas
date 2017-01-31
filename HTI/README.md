@@ -1,20 +1,22 @@
 ## SUMMARY
 
-From HTI's Codebook : 
+*Human Trafficking Destinations* presents data on countries cited as destinations of seven types of human trafficking labor between the years of 2001 and 2011. The data of this interactive visualization comes from the Human Trafficking Indicators, an open data project launched and maintained by Australian National University researcher Richard W. Frank. 
 
-The Human Trafficking Indicators database (HTI) codes information about human trafficking flows between 179 
+\u About the Human Trafficking Indicators (HTI) dataset (from the *HTI Codebook*) \u
+
+"The Human Trafficking Indicators database (HTI) codes information about human trafficking flows between 179 
 countries and within them from 2000 to 2011.1 These data capture the various types of human trafficking found 
 within a country as well as what its government is doing to prosecute traffickers, protect victims, and prevent 
 further trafficking. It also codes whether states are primarily source, transit, or destination countries as well 
 as if there is internal trafficking. The data are ordered by trafficking type and then according to the rough 
-structure of the US State Department’s Trafficking in Persons (TIP) reports.
+structure of the US State Department’s Trafficking in Persons (TIP) reports."
 
 ## DESIGN 
 
 The objective of this D3 visualization is to introduce people to the types of labor defined under the umbrella
 term "human trafficking", and to highlight the global distribution of destinations of such exploitation. 
 
-**FIRST iteration (index.html)**
+**FIRST iteration (index1.html)**
 
 ![Design #1] (https://cloud.githubusercontent.com/assets/19956669/22394041/e3383036-e4c9-11e6-9f80-ca1bf8946347.png)
 * Begin with a blank map, title, legend, labor types and go button. 
