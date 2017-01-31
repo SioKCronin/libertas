@@ -4,7 +4,7 @@
 
 From the Human Trafficking Indicators (HTI) *Codebook*:
 
-* The Human Trafficking Indicators database (HTI) codes information about human trafficking flows between 179 countries and within them from 2000 to 2011.1 These data capture the various types of human trafficking found within a country as well as what its government is doing to prosecute traffickers, protect victims, and prevent further trafficking. It also codes whether states are primarily source, transit, or destination countries as well as if there is internal trafficking. The data are ordered by trafficking type and then according to the rough structure of the US State Department’s Trafficking in Persons (TIP) reports.*
+*The Human Trafficking Indicators database (HTI) codes information about human trafficking flows between 179 countries and within them from 2000 to 2011.1 These data capture the various types of human trafficking found within a country as well as what its government is doing to prosecute traffickers, protect victims, and prevent further trafficking. It also codes whether states are primarily source, transit, or destination countries as well as if there is internal trafficking. The data are ordered by trafficking type and then according to the rough structure of the US State Department’s Trafficking in Persons (TIP) reports.*
 
 ## CONTENTS
 
