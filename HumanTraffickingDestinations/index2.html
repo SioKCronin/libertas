@@ -8,245 +8,239 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+  <style>
+    p {
+      color: black;
+    }
 
-    <style>
-      p {
-        color: black;
-      }
+    h3 {
+      text-align: center;
+      font-size: 0.9em;
+    }
 
-      h3 {
-        text-align: center;
-        font-size: 0.9em;
-      }
+    .labor-types {
+      font-size: 17px;
+      color: #2b8cbe;
+    }
 
-      .labor-types {
-        font-size: 17px;
-        color: #2b8cbe;
-      }
+    #labor_type_description {
+      height: 30px;
+      color: Black;
+      text-align: center;
+      font-family: Helvetica;
+      padding-bottom: 10px;
+    }
 
+    body {
+      font-family: Helvetica;
+      background-color: #ece7f2;
+    }
 
-      #labor_type_description {
-        height: 30px;
-        color: Black;
-        text-align: center;
-        font-family: Helvetica;
-        padding-bottom: 10px;
-      }
+    h2 {
+      text-align: center;
+      font-size: 2.1em;
+      font-family: Helvetica;
+      color: black;
+    }
 
-      body {
-        font-family: Helvetica;
-        background-color: #ece7f2;
-      }
+    svg {
+      display: block;
+    }
 
-      h2 {
-        text-align: center;
-        font-size: 2.1em;
-        font-family: Helvetica;
-        color: black;
-      }
+    .main {
+      position: relative;
+    }
 
-      svg {
-        display: block;
-      }
+    div.legend {
+      color: #333;
+      position:absolute;
+      bottom: 150px;
+    }
 
-      .main {
-        position: relative;
-      }
+    div.legend span {
+      border: 1px solid #333;
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 0.80em;
+    }
 
-      div.legend {
-        color: #333;
-        position:absolute;
-        bottom: 150px;
-      }
+    .year {
+      font-size: 100px;
+      color: #bdd7e7;
+      position: absolute;
+      bottom: 20px;
+      left: 15px;
+    }
 
-      div.legend span {
-        border: 1px solid #333;
-        width: 10px;
-        height: 10px;
-        display: inline-block;
-        margin-left: 20px;
-        font-size: 0.80em;
-      }
+    .nodata {
+      background-color: white;
+    }
 
-      .year {
-        font-size: 100px;
-        color: #bdd7e7;
-        position: absolute;
-        bottom: 20px;
-        left: 15px;
-      }
+    .yes {
+      background-color: yellow;
+    }
 
-      .nodata {
-        background-color: white;
-      }
+    .no {
+      background-color: lightBlue;
+    }
 
-      .yes {
-        background-color: yellow;
-      }
+    .btn {
+      margin-left: 20px;
+    }
 
-      .no {
-        background-color: lightBlue;
-      }
+    div.labor-types span {
+      margin-right: 20px;
+    }
+  </style>
+  <script type="text/javascript">
+    // Set layout parameters for map projection
+    function draw(geo_data) {
+      "use strict";
+      var margin = 5,
+          width = 1140 - margin,
+          height = 600 - margin;
 
-      .btn {
-        margin-left: 20px;
-      }
+      // Define svg
+      var svg = d3.select(".main")
+                  .append("svg")
+                  .attr("width", width + margin)
+                  .attr("height", height + margin)
+                  .append('g')
+                  .attr('class', 'map');
 
-      div.labor-types span {
-        margin-right: 20px;
-      }
+      // Project, scale and translate mercator geo projection
+      var projection = d3.geo.mercator()
+                             .scale((width -3) / (2 * Math.PI))
+                             .translate( [width / 2, height / 1.5]);
 
-    </style>
-    <script type="text/javascript">
+      // Define projection path to be used with country geometries
+      var path = d3.geo.path().projection(projection);
 
-      function draw(geo_data) {
-        "use strict";
-        var margin = 5,
-            width = 1140 - margin,
-            height = 600 - margin;
+      // Map country geometries to svg using path
+      var map = svg.selectAll('path')
+                   .data(geo_data.features)
+                   .enter()
+                   .append('path')
+                   .attr('d', path)
+                   .style('fill', 'white')
+                   .style('stroke', 'black')
+                   .style('stroke-width', 0.5);
 
-        var svg = d3.select(".main")
-            .append("svg")
-            .attr("width", width + margin)
-            .attr("height", height + margin)
-            .append('g')
-            .attr('class', 'map');
+      d3.json("data.json", update);
+    };
 
-        var projection = d3.geo.mercator()
-                               .scale((width -3) / (2 * Math.PI))
-                               .translate( [width / 2, height / 1.5]);
+    function update(data) {
+      // Return data for each year in data
+      var nested = d3.nest()
+                     .key(function(d) { return d['year']; })
+                     .entries(data);
 
-        var path = d3.geo.path().projection(projection);
+      d3.select('svg').datum(nested);
 
-        var map = svg.selectAll('path')
-                     .data(geo_data.features)
-                     .enter()
-                     .append('path')
-                     .attr('d', path)
-                     .style('fill', 'white')
-                     .style('stroke', 'black')
-                     .style('stroke-width', 0.5);
+      d3.json("labor_types.json", buildControls);
+    }
 
-        d3.json("data.json", update);
+    function projectByType(laborType, finish) {
+      // Iterate through years for selected labortype
+      var data = d3.select('svg').datum();
+      var yearIdx = 0;
 
-      };
+      var yearIntervalId = setInterval(function() {
+        projectCountriesForYear(yearIdx);
 
-      function update(data) {
-        var nested = d3.nest()
-          .key(function(d) {
-              return d['year'];
-            })
-          .entries(data);
+        yearIdx++;
 
-        d3.select('svg').datum(nested);
+        if (yearIdx == data.length) {
+          clearInterval(yearIntervalId);
+          finish();
+        }
+      }, 1000);
 
-        d3.json("labor_types.json", buildControls);
-      }
+      function projectCountriesForYear(yearIdx) {
+        // Project countries on map for each year for selected laborType
+        var filtered_true = _(data[yearIdx].values)
+          .filter([laborType, true])
+          .map(function(value) {
+            return value.country;
+          })
+          .value();
 
-      function projectByType(laborType, finish) {
-        var data = d3.select('svg').datum();
+        var filtered_false = _(data[yearIdx].values)
+          .filter([laborType, false])
+          .map(function(value) {
+            return value.country;
+          })
+          .value();
 
-        var yearIdx = 0;
+        d3.select(".year").text(data[yearIdx].key);
 
-        var yearIntervalId = setInterval(function() {
-          projectCountriesForYear(yearIdx);
-
-					yearIdx++;
-
-					console.log(yearIdx);
-
-          if (yearIdx == data.length) {
-            clearInterval(yearIntervalId);
-            finish();
+        function updateCountry(d) {
+          // Fill countries based on citation value (true, false, or null)
+          if (filtered_true.indexOf(d.properties.name) !== -1) {
+            return "yellow";
+          } else if (filtered_false.indexOf(d.properties.name) !== -1) {
+            return "lightBlue";
           }
-				}, 1000);
-
-				function projectCountriesForYear(yearIdx) {
-					var filtered_true = _(data[yearIdx].values)
-						.filter([laborType, true])
-					  .map(function(value) {
-							return value.country;
-						})
-						.value();
-
-          var filtered_false = _(data[yearIdx].values)
-            .filter([laborType, false])
-            .map(function(value) {
-              return value.country;
-            })
-            .value();
-
-          d3.select(".year")
-            .text(data[yearIdx].key);
-
-					function updateCountry(d) {
-            // If TRUE, fill country yellow
-						if (filtered_true.indexOf(d.properties.name) !== -1) {
-							return "yellow";
-            // If FALSE, fill country light blue
-						} else if (filtered_false.indexOf(d.properties.name) !== -1) {
-              return "lightBlue";
-            // If no data, fill country white 
-            } else {
-              return "white";
-            }
-          }
-
-					d3.select("g")
-						.selectAll('path')
-						.transition()
-						.duration(500)
-						.style('fill', updateCountry)
-				}
-
-      }
-
-			function buildControls(laborTypes) {
-        var labels = d3.select('.sidebar')
-          .append('div')
-          .attr('class','labor-types')
-          .selectAll('label')
-          .data(laborTypes)
-          .enter()
-          .append('label')
-            .attr('class', 'radio-inline');
-
-        labels.append('input')
-          .attr('type', 'radio')
-          .attr('name', 'labor-type')
-          .attr('id', function(d) { return d.key; })
-          .on('click', showDescription);
-
-        labels.append('span')
-          .text(function(d) { return d.name; });
-
-				d3.select('div.labor-types').append('button')
-					.attr('name', 'select_type')
-          .attr('class', 'btn btn-success')
-					.html('Play')
-          .on('click', go);
-
-        function go(d, i) {
-          var that = this;
-
-          function finish() {
-            $(that).prop("disabled", false)
-          }
-
-          $(this).prop("disabled", true)
-
-          var laborType = d3.select('input[name="labor-type"]:checked').data()[0].key;
-
-          projectByType(laborType, finish);
+          return "white";
         }
 
-        function showDescription(d, i) {
-          d3.select('div#labor_type_description')
-            .html(d.description);
+        d3.select("g")
+          .selectAll('path')
+          .transition()
+          .duration(500)
+          .style('fill', updateCountry);
+      }
+    }
+
+    function buildControls(laborTypes) {
+      // Build radio dial buttons
+      var labels = d3.select('.sidebar')
+                     .append('div')
+                     .attr('class','labor-types')
+                     .selectAll('label')
+                     .data(laborTypes)
+                     .enter()
+                     .append('label')
+                     .attr('class', 'radio-inline');
+
+      labels.append('input')
+            .attr('type', 'radio')
+            .attr('name', 'labor-type')
+            .attr('id', function(d) { return d.key; })
+            .on('click', showDescription);
+
+      labels.append('span').text(function(d) { return d.name; });
+
+      d3.select('div.labor-types').append('button')
+                                  .attr('name', 'select_type')
+                                  .attr('class', 'btn btn-success')
+                                  .html('Play')
+                                  .on('click', play);
+
+      // Define what happens when user clicks 'Play' button
+      function play(d, i) {
+        var that = this; // Access original value in local scope
+
+        function finish() {
+          $(that).prop("disabled", false) // Enable 'Play' button 
         }
-      }
-    </script>
-  </head>
+        $(this).prop("disabled", true) // Disable 'Play' button
+
+        var laborType = d3.select('input[name="labor-type"]:checked')
+                          .data()[0].key;
+
+        projectByType(laborType, finish);
+      }
+
+      function showDescription(d, i) {
+        d3.select('div#labor_type_description') // Show laborType description
+          .html(d.description);
+      }
+    }
+  </script>
+</head>
 <body>
   <script type="text/javascript">
     d3.json("world_countries.json", draw);
@@ -254,11 +248,12 @@
   <div class="container">
       <div class="title">
         <h2>Human Trafficking Destinations</h2>
-        <p>In 2001, the US State Department published its first Trafficking in Persons (TIP) report; a diplomatic tool tracking governmental anti-human
-        trafficking efforts.</p>
+        <p>In 2001, the US State Department published its first Trafficking in Persons (TIP) report; a diplomatic tool tracking governmental anti-human trafficking efforts.</p>
         <p>Richard W. Frank of the Australian National University maintains an online open data repository of TIP data, called the Human Trafficking Indicators (HTI),
-        which includes data from 2001 to 2001 for 179 countries, assessing each country’s role as a source, transit location, or destination for human trafficking.</p>
-        <p>Global patterns of human trafficking vary by year and by form of exploitation, which can be observed for the following seven TPI-defined forced labor categories:</p>
+        which includes data from 2001 to 2011 for 179 countries, assessing each country’s role as a source, transit location, or destination for human trafficking.</p>
+        <p> Variations in regional and global spread can be observed when comparing labor types. This can be seen most notably when comparing Prostituion
+        (global spread over the 11 year period) with Child Soldiers (restricted regional growth over time)</p>
+        <p>To observe these variations in global patterns of human trafficking, compare the following seven TPI-defined forced labor categories:</p>
       </div>
       <div class="sidebar">
       </div>
@@ -272,7 +267,7 @@
         <div class="year"></div>
       </div>
       <div>
-        <h3>Source: <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators</a></h3> 
+        <h3>Source: <a href="https://humantraffickingindicators.org/">Human Trafficking Indicators</a></h3>
       </div>
     </div>
   </div>
