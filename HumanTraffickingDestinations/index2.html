@@ -13,6 +13,11 @@
       color: black;
     }
 
+    em {
+      font-weight: bold;
+      font-style: normal;
+    }
+
     h3 {
       text-align: center;
       font-size: 0.9em;
@@ -211,7 +216,7 @@
             .attr('id', function(d) { return d.key; })
             .on('click', showDescription);
 
-      labels.append('span').text(function(d) { return d.name; });
+      labels.append('span').html(function(d) { return d.name; });
 
       d3.select('div.labor-types').append('button')
                                   .attr('name', 'select_type')
@@ -219,8 +224,18 @@
                                   .html('Play')
                                   .on('click', play);
 
+      // Choose the first labor type
+      d3.select('input[name="labor-type"]:first-child')
+        .attr('checked', true)
+        .each(
+          function(d) {
+            var clickFunction = d3.select(this).on('click');
+            clickFunction.apply(this, [d]);
+          }
+        );
+
       // Define what happens when user clicks 'Play' button
-      function play(d, i) {
+      function play(d) {
         var that = this; // Access original value in local scope
 
         function finish() {
@@ -234,7 +249,7 @@
         projectByType(laborType, finish);
       }
 
-      function showDescription(d, i) {
+      function showDescription(d) {
         d3.select('div#labor_type_description') // Show laborType description
           .html(d.description);
       }
@@ -251,18 +266,19 @@
         <p>In 2001, the US State Department published its first Trafficking in Persons (TIP) report; a diplomatic tool tracking governmental anti-human trafficking efforts.</p>
         <p>Richard W. Frank of the Australian National University maintains an online open data repository of TIP data, called the Human Trafficking Indicators (HTI),
         which includes data from 2001 to 2011 for 179 countries, assessing each country’s role as a source, transit location, or destination for human trafficking.</p>
-        <p> Variations in regional and global spread can be observed when comparing labor types. This can be seen most notably when comparing Prostituion
-        (global spread over the 11 year period) with Child Soldiers (restricted regional growth over time)</p>
-        <p>To observe these variations in global patterns of human trafficking, compare the following seven TPI-defined forced labor categories:</p>
+        <p>Variations in regional and global spread can be observed when comparing labor types.
+        This can be seen most notably when comparing Prostituion (global spread over the 11 year period) 
+        with Child Soldiers (restricted regional growth over time), which you can compare below.</p>
+        <p>Also feel free to explore other variations in global human trafficking patterns by selecting from one of the other TPI-defined forced labor categories.</p>
       </div>
       <div class="sidebar">
       </div>
       <div class="main">
         <div id="labor_type_description"></div>
         <div class="legend">
-          <span class="nodata"></span> No data<br />
-          <span class="no"></span> Not cited<br />
-          <span class="yes"></span> Cited as destination
+          <span class="yes"></span> Destination<br />
+          <span class="no"></span> Not a destination<br />
+          <span class="nodata"></span> No data
         </div>
         <div class="year"></div>
       </div>
