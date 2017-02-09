@@ -8,7 +8,7 @@ There are more than 20 million people estimated to be inprisoned as modern-day s
 
 Vizualizations:
 
-* [Human Trafficking Indicators](/libertas/HumanTraffickingIndicators/index.html)
+* [Human Trafficking Destinations](/libertas/HumanTraffickingDesitnations/index.html)
 
 Data sources: 
 
