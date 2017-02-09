@@ -10,7 +10,7 @@ Vizualizations:
 
 * [Human Trafficking Indicators](/libertas/HumanTraffickingIndicators/index.html)
 
-Data sources I am investigating include: 
+Data sources: 
 
 * Human Trafficking Indicators (HTI) - https://humantraffickingindicators.org/ 
 * U.S. State Department (USSD)- https://2001-2009.state.gov/g/tip/rls/fs/07/83371.htm
