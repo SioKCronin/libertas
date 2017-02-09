@@ -8,6 +8,10 @@ There are more than 20 million people estimated to be inprisoned as modern-day s
 
 ![us anti-human trafficking funding by region](https://cloud.githubusercontent.com/assets/19956669/21872129/adc216e8-d81b-11e6-95e9-8ab06320401f.png)
 
+Vizualizations:
+
+* [Human Trafficking Indicators](HTI.html)
+
 Data sources I am investigating include: 
 
 * Human Trafficking Indicators (HTI) - https://humantraffickingindicators.org/ 
