@@ -12,10 +12,10 @@ Vizualizations:
 
 Data sources: 
 
-* Human Trafficking Indicators (HTI) - https://humantraffickingindicators.org/ 
-* U.S. State Department (USSD)- https://2001-2009.state.gov/g/tip/rls/fs/07/83371.htm
-* UN Office on Drugs and Crime (UNODC)- http://www.unodc.org/unodc/en/human-trafficking/global-report-on-trafficking-in-persons.html
-* European Commission (EC) - https://ec.europa.eu/anti-trafficking/eu-policy/eurostat-first-eu-statistical-data-report_en
+* [Human Trafficking Indicators (HTI)](https://humantraffickingindicators.org/)
+* [U.S. State Department (USSD)](https://2001-2009.state.gov/g/tip/rls/fs/07/83371.html)
+* [UN Office on Drugs and Crime (UNODC)](http://www.unodc.org/unodc/en/human-trafficking/global-report-on-trafficking-in-persons.html)
+* [European Commission (EC)](https://ec.europa.eu/anti-trafficking/eu-policy/eurostat-first-eu-statistical-data-report_en)
 
 
 
