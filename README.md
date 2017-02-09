@@ -6,8 +6,6 @@ Human trafficking is defined as "the trade of humans, most commonly for the purp
 
 There are more than 20 million people estimated to be inprisoned as modern-day slaves. Given the nature of the black market, data collection can be difficult as well as the establishment of international standards for tracking trafficking flows, establishing and enforcing legislation, and leveraging technology to free those held captive. 
 
-![us anti-human trafficking funding by region](https://cloud.githubusercontent.com/assets/19956669/21872129/adc216e8-d81b-11e6-95e9-8ab06320401f.png)
-
 Vizualizations:
 
 * [Human Trafficking Indicators](/libertas/HumanTraffickingIndicators/index.html)
