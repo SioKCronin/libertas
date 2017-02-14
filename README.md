@@ -1,6 +1,6 @@
 # libertas
 
-*libertas* is dedicated to compiling research on human trafficking. 
+Libertas is dedicated to presenting data visualizations exploring global trends in anti-human trafficking efforts.
 
 Human trafficking is defined as "the trade of humans, most commonly for the purpose of sexual slavery, forced labor, or commercial sexual exploitation for the trafficker or others" [Wikipedia 1.16.2017]
 
