@@ -1,5 +1,5 @@
 # libertas
-![libertas](https://cloud.githubusercontent.com/assets/19956669/22443396/996f6d62-e6f3-11e6-9569-8c617f51329d.png)
+![libertas](https://cloud.githubusercontent.com/assets/19956669/23144021/96935eaa-f779-11e6-8d29-a8426c725017.png)
 
 Libertas is dedicated to presenting data visualizations exploring global trends in anti-human trafficking efforts.
 
