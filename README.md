@@ -1,7 +1,7 @@
 # libertas
 ![libertas](https://cloud.githubusercontent.com/assets/19956669/23144021/96935eaa-f779-11e6-8d29-a8426c725017.png)
 
-Libertas is dedicated to presenting data visualizations exploring global trends in anti-human trafficking efforts.
+Libertas presents trends in global human trafficking by labor type.
 
 Human trafficking is defined as "the trade of humans, most commonly for the purpose of sexual slavery, forced labor, or commercial sexual exploitation for the trafficker or others" [Wikipedia 1.16.2017]
 
@@ -11,7 +11,7 @@ Vizualizations:
 
 * [Human Trafficking Destinations](https://siokcronin.github.io/libertas/HumanTraffickingDestinations/index.html)
 
-Data sources: 
+Human Trafficking Data Resources: 
 
 * [Human Trafficking Indicators (HTI)](https://humantraffickingindicators.org/)
 * [U.S. State Department (USSD)](https://2001-2009.state.gov/g/tip/rls/fs/07/83371.html)
