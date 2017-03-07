@@ -1,7 +1,7 @@
 # libertas
 ![libertas](https://cloud.githubusercontent.com/assets/19956669/23144021/96935eaa-f779-11e6-8d29-a8426c725017.png)
 
-Libertas presents trends in global human trafficking by labor type.
+Libertas presents trends in global human trafficking.
 
 Human trafficking is defined as "the trade of humans, most commonly for the purpose of sexual slavery, forced labor, or commercial sexual exploitation for the trafficker or others" [Wikipedia 1.16.2017]
 
