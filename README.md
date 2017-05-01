@@ -3,13 +3,13 @@
 
 [PROJECT WEBSITE](https://siokcronin.github.io/libertas/HumanTraffickingDestinations/index.html)
 
-# Overview
+## Overview
 
 Libertas presents trends in global human trafficking destinations. Human trafficking is defined as "the trade of humans, most commonly for the purpose of sexual slavery, forced labor, or commercial sexual exploitation for the trafficker or others" [Wikipedia 1.16.2017]
 
 There are more than 20 million people estimated to be inprisoned as modern-day slaves. Given the nature of the black market, data collection can be difficult as well as the establishment of international standards for tracking trafficking flows, establishing and enforcing legislation, and leveraging technology to free those held captive. 
 
-# Data Resources
+## Data Resources
 
 * [Human Trafficking Indicators (HTI)](https://humantraffickingindicators.org/)
 * [U.S. State Department (USSD)](https://2001-2009.state.gov/g/tip/rls/fs/07/83371.html)
