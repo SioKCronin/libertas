@@ -7,7 +7,7 @@ Libertas presents trends in global human trafficking destinations. Human traffic
 
 There are more than 20 million people estimated to be inprisoned as modern-day slaves. Given the nature of the black market, data collection can be difficult as well as the establishment of international standards for tracking trafficking flows, establishing and enforcing legislation, and leveraging technology to free those held captive. 
 
-[Human Trafficking Destinations](https://siokcronin.github.io/libertas/HumanTraffickingDestinations/index.html)
+* [Human Trafficking Destinations (2001-2011)](https://siokcronin.github.io/libertas/HumanTraffickingDestinations/index.html)
 
 ## Data Resources
 
