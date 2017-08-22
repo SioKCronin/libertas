@@ -2,9 +2,11 @@
 
 ## Overview
 
-Libertas presents trends in global human trafficking destinations. Human trafficking is defined as "the trade of humans, most commonly for the purpose of sexual slavery, forced labor, or commercial sexual exploitation for the trafficker or others" [Wikipedia 1.16.2017]
+Libertas is dedicated to exploring data resources relating to anti-trafficking intelligence projects, and spans research that measures human trafficking directly (Human Trafficking Destinations) as well as data that monitors vulnerable populations (Syrian Immigration Flows). 
 
-There are more than 20 million people estimated to be inprisoned as modern-day slaves. Given the nature of the black market, data collection can be difficult as well as the establishment of international standards for tracking trafficking flows, establishing and enforcing legislation, and leveraging technology to free those held captive. 
+Human trafficking is defined as "the trade of humans, most commonly for the purpose of sexual slavery, forced labor, or commercial sexual exploitation for the trafficker or others" [Wikipedia 1.16.2017]
+
+There are more than 20 million people estimated to be inprisoned as modern-day slaves. Given the nature of the black market, data collection can be difficult as well as the establishment of international standards for tracking trafficking activity, establishing and enforcing legislation, and developing open source technology to free those held captive. My hope is to do what I can with available data until I have the opportunity to work more directly on an intelligence project. 
 
 ## EDAs
 
