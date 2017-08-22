@@ -1,5 +1,4 @@
 # libertas
-![libertas](https://cloud.githubusercontent.com/assets/19956669/23144021/96935eaa-f779-11e6-8d29-a8426c725017.png)
 
 ## Overview
 
